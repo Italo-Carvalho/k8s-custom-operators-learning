@@ -1,0 +1,12 @@
+apiVersion: helm-chart.example.com/v1alpha1
+kind: Wordpress
+metadata:
+  labels:
+    app.kubernetes.io/name: wordpress
+    app.kubernetes.io/instance: wordpress-sample
+    app.kubernetes.io/part-of: wordpress-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: wordpress-operator
+  name: wordpress-sample
+spec:
+  # TODO(user): Add fields here

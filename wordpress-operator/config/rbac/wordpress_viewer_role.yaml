@@ -1,0 +1,27 @@
+# permissions for end users to view wordpresses.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: wordpress-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: wordpress-operator
+    app.kubernetes.io/part-of: wordpress-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: wordpress-viewer-role
+rules:
+- apiGroups:
+  - helm-chart.example.com
+  resources:
+  - wordpresses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - helm-chart.example.com
+  resources:
+  - wordpresses/status
+  verbs:
+  - get

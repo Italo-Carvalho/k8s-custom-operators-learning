@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- helm-chart_v1alpha1_wordpress.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
