@@ -28,6 +28,10 @@ type MemcachedSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
+	// DisableEvictions configura o memcached para retorna um erro
+	// em vez de despejar dados quando o cluster estiver cheio
+	DisableEvictions bool `json:"disableevictions"`
+
 	// +kubebuilder:validation:Minimum=0
 	// Size is the size of the memcached deployment
 	Size int32 `json:"size"`
@@ -41,9 +45,9 @@ type MemcachedStatus struct {
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
+// +kubebuilder:subresource:status
 
 // Memcached is the Schema for the memcacheds API
-// +kubebuilder:subresource:status
 type Memcached struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`

@@ -20,4 +20,7 @@ resources:
   kind: Memcached
   path: github.com/Italo-Carvalho/memcached-operator/api/v1alpha1
   version: v1alpha1
+  webhooks:
+    conversion: true
+    webhookVersion: v1
 version: "3"
